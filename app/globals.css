@@ -2,20 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities{
+    
+    .hover {
+        color:#3f72ae;
+        padding-bottom: 12px;
+        border-bottom: 3px solid rgb(20, 20, 21);
+    }
+  .up{
+    transform: translateY(-10%);
+    transition: transform 0.3s;
   }
+
+  .hide{
+    visibility: hidden;
+  }
+
+  .belowMd{
+    flex-direction:column;
+    position: absolute;
+    top: 2.8vh;
+    right: 1.5vw;
+    background-color: #ffffff;
+    padding:6vh 8vw 2vh 8vw;
+  }
+
+  .aboutBG{
+    background-color: #f6f6f6;
+    background: linear-gradient(rgba(7, 146, 210, 0.556), rgba(44, 155, 180, 0.819)), url('/about.jpg') no-repeat center center;
+  }
+.aboutContainer{
+  border: 1px solid rgba(221, 228, 232, 0.747);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .skillBG{
+    background-color: #f6f6f6;
+    background: linear-gradient(rgba(221, 228, 232, 0.747), rgba(167, 183, 187, 0.686)), url('/skill.jpg') no-repeat center center;
+  }
+  .educationBG{
+    background-color: #f6f6f6;
+    background:url('/education.jpg') no-repeat center right;
+  }
+  
+  
 }
