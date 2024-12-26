@@ -10,7 +10,7 @@ const skills = [
 ];
 
 const SkillsSection = () => (
-    <section id="skills" className="skills-secton bg-gray-50 text-gray-900 px-6 py-12">
+    <section id="skill" className="skills-section bg-gray-50 text-gray-900 px-6 py-12">
         <div className="container mx-auto px-6 py-8 shadow-2xl rounded-lg">
             <div className="flex justify-start items-center gap-4 mb-8">
                 <div className="h-[3px] w-[7vw] bg-indigo-600"></div>
