@@ -33,7 +33,7 @@ export default function Home() {
   //options for observer
   const options = {
     rootMargin: "0px",
-    threshold: 0.5
+    threshold: 0.3
   };
   //observer for nav and page
   useEffect(() => {
@@ -122,24 +122,24 @@ export default function Home() {
               <Image className={`${showdropdown ? "hidden" : ""}`} src="/navOpen.svg" width={24} height={24} alt='menu' priority />
             </div>
             {/* menubar */}
-            <ul ref={dropdownRef} className={`options z-30 ${showdropdown ? "" : "max-md:hide"} max-md:belowMd max-md:rounded-xl flex items-center justify-between md:gap-11 gap-5`}>
+            <div ref={dropdownRef} className={`options z-30 ${showdropdown ? "" : "max-md:hide"} max-md:belowMd max-md:rounded-xl flex items-center justify-between md:gap-11 gap-5`}>
               <div onClick={() => setshowdropdown(false)} className="z-40 absolute top-0 right-3 hidden max-md:inline">
                 <Image src="/navClose.svg" width={24} height={24} alt='menu' priority />
               </div>
               {['Home', 'About', 'Education', 'Skill'].map((item, index) => (
-                <li
+                <button
                   key={index}
                   ref={el => idRef.current[index] = el}
-                  className='font-semibold text-sm cursor-pointer hover:text-[#3e57bc]'
+                  className='font-semibold text-sm hover:text-[#3e57bc]'
                   onClick={() => {
                     const element = document.getElementById(item.toLowerCase());
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
                   {item}
-                </li>
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </nav>
